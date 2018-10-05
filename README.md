@@ -1,2 +1,2 @@
 # ExerciciSingleton
-Exercici per practicar Singleton victorpinon i mbasart
+Exercici per practicar Singleton victorpinon, mbasart i lestrigones
