@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class I18NManagerTest {
     //aqui farem el test del singleton
+    // sóc la noe jo tb he fet cosetes
 
     @Test
     public void testGetText(){
