@@ -15,6 +15,7 @@ public class I18NManager {
     private HashMap<String, ResourceBundle> data; // resourcebundle es el contenedor
 
     private I18NManager (){//constructor inicializa
+
         this.data = new HashMap<String, ResourceBundle>();//inicializa data
     }
 
@@ -26,22 +27,22 @@ public class I18NManager {
     }
     public String getText(String language, String key){
         log.info("language "+language+ "key: "+key);
-        ResourceBundle rb = data.get(language);
-        String ret = null;
+        ResourceBundle rb = data.get(language); //resourceBandle quan volem agafar coses del resource
+        String ret = null; //inicialitzem la paraula que retornara
         if(rb == null){
             log.info("Classloader:: language "+language+ "key: "+key);
             try {
-                rb=ResourceBundle.getBundle("edu.upc.eetac.dsa.patrons.i18n."+language);
-                data.put(language, rb);
+                rb=ResourceBundle.getBundle("edu.upc.eetac.dsa.patrons.i18n."+language); //agafar el que conte el resource
+                data.put(language, rb); //un cop agafat ho tirem dins la cache i aixi en propers cops no haurem de tornar a fer el proces d'agafar i tirar
             }
             catch (Throwable t) {
-                log.error("!!!!"+t.getMessage());
+                log.error("!!!!"+t.getMessage()); //si no troba el nom del fitxer al resource, llença una excepcio
             }
         }
-        else log.info ("Cache::");
+        else log.info ("Cache::"); //ja ho agafa directament de la cache
 
-        if (rb!=null) ret = rb.getString(key);
-        log.info("text: "+ ret);
+        if (rb!=null) ret = rb.getString(key); //guarda la paraula
+        log.info("text: "+ ret); //ensenya la paraula
         return ret;
     }
 
