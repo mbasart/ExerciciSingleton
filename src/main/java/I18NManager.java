@@ -1,7 +1,11 @@
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import org.apache.log4j.Logger;
 //Esto es un singleton
 public class I18NManager {
+
+    //mostra informacio amb log4j
+    final Logger log = Logger.getLogger(I18NManager.class);
 
     private static I18NManager instance;//atributos
 
