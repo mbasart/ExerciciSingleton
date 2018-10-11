@@ -3,7 +3,6 @@ package edu.upc.eetac.dsa.patrons.i18n;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 //Esto es un singleton
 public class I18NManager {
